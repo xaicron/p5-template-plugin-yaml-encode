@@ -2,7 +2,7 @@ use inc::Module::Install;
 name 'Template-Plugin-YAML-Encode';
 all_from 'lib/Template/Plugin/YAML/Encode.pm';
 
-# requires '';
+requires 'YAML';
 
 tests 't/*.t';
 author_tests 'xt';
