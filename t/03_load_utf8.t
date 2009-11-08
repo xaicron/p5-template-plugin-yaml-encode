@@ -7,7 +7,6 @@ use utf8;
 use Template;
 
 my $file = 't/data/03.yaml';
-my $data = 
 
 my $tt = Template->new({
 	ENCDOING => 'utf8',
