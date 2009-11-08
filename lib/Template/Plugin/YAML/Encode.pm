@@ -34,16 +34,17 @@ sub dump_html {
 	my $yaml = Dump @_;
 	$yaml =~ s/
 		(
-			[ "&<>\n]
+			[ "&<>'\n]
 		)
 		(?!amp;)
 	/{
 		' '  => '&nbsp;',
 		'"'  => '&quot;',
-		'&'  => '&amp:',
+		'&'  => '&amp;',
 		'<'  => '&lt;',
 		'>'  => '&gt;',
 		"\n" => "<br>\n",
+		"'"  => '&#39;',
 	}->{$1}/gex;
 	
 	return $yaml;
