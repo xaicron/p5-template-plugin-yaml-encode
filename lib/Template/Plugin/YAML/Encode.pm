@@ -76,7 +76,7 @@ __END__
 
 =head1 NAME
 
-Template::Plugin::YAML::Encode - Encode supported YMAL
+Template::Plugin::YAML::Encode - Encode supported YAML
 
 =head1 SYNOPSIS
 
