@@ -7,7 +7,7 @@ use Encode qw/find_encoding/;
 use YAML qw/Load Dump LoadFile DumpFile/;
 use base qw/Template::Plugin/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $DEFAULT_ENCODING = find_encoding 'utf8';
 
