@@ -29,23 +29,19 @@ sub dump {
 	return Dump @_;
 }
 
+my  %_escape_table = (
+	' '  => '&nbsp;',
+	'"'  => '&quot;',
+	'&'  => '&amp;',
+	'<'  => '&lt;',
+	'>'  => '&gt;',
+	"\n" => "<br>\n",
+	"'"  => '&#39;',
+);
 sub dump_html {
 	my $self = shift;
 	my $yaml = Dump @_;
-	$yaml =~ s/
-		(
-			[ "&<>'\n]
-		)
-		(?!amp;)
-	/{
-		' '  => '&nbsp;',
-		'"'  => '&quot;',
-		'&'  => '&amp;',
-		'<'  => '&lt;',
-		'>'  => '&gt;',
-		"\n" => "<br>\n",
-		"'"  => '&#39;',
-	}->{$1}/gex;
+	$yaml =~ s/([ "&<>'\n])/$_escape_table{$1}/g;
 	
 	return $yaml;
 }
